@@ -17,8 +17,28 @@ public static class Divisors {
     /// <param name="number">The number to find the divisor</param>
     /// <returns>List of divisors</returns>
     private static List<int> FindDivisors(int number) {
+       
         List<int> results = new();
-        // TODO problem 1
+
+        if (number <= 1)
+        {
+            return results;
+        }
+
+        // STEP 2: Iterate through all candidate numbers starting from 1 up to (number - 1).
+        // Note: The loop excludes the number itself per requirements.
+        for (int i = 1; i < number; i++)
+        {
+            // STEP 3: Test divisibility using the modulo operator (%).
+            // If 'number % i == 0', then 'i' divides 'number' evenly with no remainder.
+            if (number % i == 0)
+            {
+                // STEP 4: Add the valid divisor to the results list.
+                results.Add(i);
+            }
+        }
+
+        // STEP 5: Return the populated list of proper divisors.    
         return results;
     }
 }
