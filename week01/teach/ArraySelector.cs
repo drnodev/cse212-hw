@@ -11,6 +11,31 @@ public static class ArraySelector
 
     private static int[] ListSelector(int[] list1, int[] list2, int[] select)
     {
-        return [];
+        /// STEP 1: Initialize a output array with the same length as the 'select' array.
+        int[] result = new int[select.Length];
+
+        // STEP 2: Create pointer/index trackers for list1 and list2 to track position in each source array.
+        int index1 = 0;
+        int index2 = 0;
+
+        // STEP 3: Loop through each decision in the 'select' array.
+        for (int i = 0; i < select.Length; i++)
+        {
+            // STEP 4: Check if current selection is 1 or 2 and pull from corresponding list,
+            // then increment that list's index tracker.
+            if (select[i] == 1)
+            {
+                result[i] = list1[index1];
+                index1++;
+            }
+            else if (select[i] == 2)
+            {
+                result[i] = list2[index2];
+                index2++;
+            }
+        }
+
+        // STEP 5: Return the constructed result array.
+        return result;
     }
 }
