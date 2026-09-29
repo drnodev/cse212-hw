@@ -25,6 +25,6 @@
     private static int CountDuplicates(int[] data)
     {
         // Add code here.
-        return 0;
+        return data.Length - data.Distinct().Count();
     }
 }
